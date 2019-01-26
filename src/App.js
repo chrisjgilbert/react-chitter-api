@@ -1,25 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import Peeps from './components/Peeps'
 import './App.css';
 
 class App extends Component {
+  state = {
+    peeps: [
+      {
+          "id": 3,
+          "body": "my first peep :)",
+          "created_at": "2018-06-23T13:21:23.317Z",
+          "updated_at": "2018-06-23T13:21:23.317Z",
+          "user": {
+            "id": 1,
+            "handle": "kay"
+          },
+          "likes": [{
+            "user": {
+              "id": 1,
+              "handle": "kay"
+            }
+          }]
+        },
+        {
+            "id": 4,
+            "body": "my second peep :)",
+            "created_at": "2018-06-23T13:21:23.317Z",
+            "updated_at": "2018-06-23T13:21:23.317Z",
+            "user": {
+              "id": 2,
+              "handle": "bill"
+            },
+            "likes": [{
+              "user": {
+                "id": 2,
+                "handle": "bill"
+              }
+            }]
+          }
+    ]
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Peeps peeps={this.state.peeps}/>
       </div>
     );
   }
