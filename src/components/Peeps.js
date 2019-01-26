@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Peep from './Peep';
 
-class Peeps extends Component {
+export class Peeps extends Component {
   render() {
     return this.props.peeps.map((peep) => (
-      <h3>{peep.body}</h3>
+      <Peep peep={peep} />
     ));
   }
 }
